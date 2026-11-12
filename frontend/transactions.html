@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisputeShield AI | Transactions</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">🛡</div>
+            <div>
+                <h2>DisputeShield AI</h2>
+                <span>PAYMENT PROTECTION</span>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <span>WORKSPACE</span>
+            <select>
+                <option>PayPal Store</option>
+            </select>
+        </div>
+
+        <nav class="navigation">
+
+            <span class="nav-heading">MAIN MENU</span>
+
+            <a href="/frontend/index.html" class="nav-link">
+                <span>▦</span> Overview
+            </a>
+
+            <a href="/frontend/disputes.html" class="nav-link">
+                <span>＋</span> New Dispute
+            </a>
+
+            <a href="/frontend/transactions.html" class="nav-link active">
+                <span>⇄</span> Transactions
+            </a>
+
+            <a href="/frontend/evidence.html" class="nav-link">
+                <span>▤</span> Evidence Center
+            </a>
+
+            <a href="/frontend/analysis.html" class="nav-link">
+                <span>✧</span> AI Analysis
+            </a>
+
+            <a href="/frontend/recommendations.html" class="nav-link">
+                <span>◈</span> Recommendations
+            </a>
+
+            <a href="/frontend/analytics.html" class="nav-link">
+                <span>▥</span> Analytics & Reports
+            </a>
+
+            <a href="/frontend/settings.html" class="nav-link">
+                <span>⚙</span> Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="security-card">
+                <h4>✧ AI Protection Workspace</h4>
+                <p>Intelligent dispute monitoring and evidence management.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">A</div>
+                <div>
+                    <h4>Administrator</h4>
+                    <span>Workspace Admin</span>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="search"
+                    id="transactionSearch"
+                    placeholder="Search transaction ID, customer...">
+            </div>
+
+            <div class="topbar-right">
+                <button class="icon-button">♧</button>
+                <div class="user-avatar">A</div>
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="content-area">
+
+            <div class="page-heading">
+
+                <div>
+                    <div class="breadcrumb">
+                        WORKSPACE / TRANSACTIONS
+                    </div>
+
+                    <h1>Transaction Management</h1>
+
+                    <p>
+                        Monitor and manage all submitted payment disputes.
+                    </p>
+                </div>
+
+                <a href="/frontend/disputes.html" class="primary-button">
+                    + New Dispute
+                </a>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Total Transactions
+                        <span class="stat-icon purple">⇄</span>
+                    </div>
+                    <h2 id="totalTransactions">0</h2>
+                    <div class="stat-footer">Recorded cases</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Pending Review
+                        <span class="stat-icon orange">◷</span>
+                    </div>
+                    <h2 id="pendingTransactions">0</h2>
+                    <div class="stat-footer">Awaiting review</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Under Analysis
+                        <span class="stat-icon blue">✧</span>
+                    </div>
+                    <h2 id="analyzingTransactions">0</h2>
+                    <div class="stat-footer">AI analysis pending</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Resolved
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <h2 id="completedTransactions">0</h2>
+                    <div class="stat-footer">Completed cases</div>
+                </div>
+
+            </section>
+
+
+            <!-- FILTER SECTION -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>All Transactions</h3>
+                        <p>Search, filter and review your dispute records.</p>
+                    </div>
+
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="statusFilter">
+                            Filter by Status
+                        </label>
+
+                        <select id="statusFilter">
+                            <option value="all">All Statuses</option>
+                            <option value="pending">Pending</option>
+                            <option value="analyzing">Analyzing</option>
+                            <option value="resolved">Resolved</option>
+                            <option value="failed">Analysis Failed</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="reasonFilter">
+                            Filter by Dispute Reason
+                        </label>
+
+                        <select id="reasonFilter">
+
+                            <option value="all">All Reasons</option>
+
+                            <option value="Item Not Received">
+                                Item Not Received
+                            </option>
+
+                            <option value="Unauthorized Transaction">
+                                Unauthorized Transaction
+                            </option>
+
+                            <option value="Item Not As Described">
+                                Item Not As Described
+                            </option>
+
+                            <option value="Duplicate Transaction">
+                                Duplicate Transaction
+                            </option>
+
+                            <option value="Refund Not Processed">
+                                Refund Not Processed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>TRANSACTION ID</th>
+                                <th>CUSTOMER</th>
+                                <th>AMOUNT</th>
+                                <th>DATE</th>
+                                <th>DISPUTE REASON</th>
+                                <th>STATUS</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="transactionTableBody">
+
+                            <tr>
+                                <td colspan="7" class="empty-table">
+                                    No transaction records available yet.
+                                    Submit a new dispute to get started.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div id="transactionMessage" class="notice" hidden></div>
+
+            </section>
+
+
+            <!-- PAYPAL PAYMENT SECTION -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+                    <div>
+                        <h3>PayPal Sandbox Checkout</h3>
+                        <p>
+                            Test secure payments using PayPal Sandbox.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <label for="paymentAmount">
+                        Payment Amount (USD)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="paymentAmount"
+                        placeholder="Enter amount"
+                        min="1"
+                        step="0.01"
+                    >
+
+                </div>
+
+                <div id="paypal-button-container"
+                     style="margin-top:20px;">
+                </div>
+
+                <div id="paymentMessage"
+                     class="notice"
+                     style="margin-top:15px;"
+                     hidden>
+                </div>
+
+            </section>
+
+
+            <!-- TRANSACTION DETAILS -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+                    <div>
+                        <h3>Transaction Details</h3>
+                        <p>Selected transaction information</p>
+                    </div>
+                </div>
+
+                <div id="transactionDetails" class="result-box">
+
+                    <div class="empty-state">
+                        <p>No transaction selected.</p>
+                        <small>
+                            Select a transaction from the table to
+                            view its details.
+                        </small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <span>DisputeShield AI © 2026</span>
+
+                <span>
+                    Intelligent Payment Dispute Management
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/frontend/transaction.js"></script>
+<script src="/frontend/paypal.js"></script>
+</body>
+</html>

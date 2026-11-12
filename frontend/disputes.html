@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisputeShield AI | New Dispute</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">🛡</div>
+            <div>
+                <h2>DisputeShield AI</h2>
+                <span>PAYMENT PROTECTION</span>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <span>WORKSPACE</span>
+            <select>
+                <option>PayPal Store</option>
+            </select>
+        </div>
+
+        <nav class="navigation">
+
+            <span class="nav-heading">MAIN MENU</span>
+
+            <a href="index.html" class="nav-link">
+                <span>▦</span> Overview
+            </a>
+
+            <a href="disputes.html" class="nav-link active">
+                <span>＋</span> New Dispute
+            </a>
+
+            <a href="transactions.html" class="nav-link">
+                <span>⇄</span> Transactions
+            </a>
+
+            <a href="evidence.html" class="nav-link">
+                <span>▤</span> Evidence Center
+            </a>
+
+            <a href="analysis.html" class="nav-link">
+                <span>✧</span> AI Analysis
+            </a>
+
+            <a href="recommendations.html" class="nav-link">
+                <span>◈</span> Recommendations
+            </a>
+
+            <a href="analytics.html" class="nav-link">
+                <span>▥</span> Analytics & Reports
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                <span>⚙</span> Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="security-card">
+                <h4>✧ AI Protection Workspace</h4>
+                <p>Intelligent dispute monitoring and evidence management.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">A</div>
+                <div>
+                    <h4>Administrator</h4>
+                    <span>Workspace Admin</span>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="search"
+                    placeholder="Search disputes, transactions...">
+            </div>
+
+            <div class="topbar-right">
+                <button class="icon-button">♧</button>
+                <div class="user-avatar">A</div>
+            </div>
+
+        </header>
+
+
+        <section class="content-area">
+
+            <!-- PAGE HEADING -->
+            <div class="page-heading">
+
+                <div>
+                    <div class="breadcrumb">
+                        WORKSPACE / NEW DISPUTE
+                    </div>
+
+                    <h1>Create New Dispute</h1>
+
+                    <p>
+                        Submit transaction details and customer complaints
+                        for AI-powered dispute analysis.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- INFORMATION NOTICE -->
+            <div class="notice">
+                <strong>AI-Powered Analysis</strong><br>
+                Provide accurate transaction and complaint information.
+                DisputeShield AI will analyze the submitted information
+                and identify the dispute category and relevant evidence.
+            </div>
+
+
+            <!-- DISPUTE FORM -->
+            <form id="disputeForm" class="form-card">
+
+                <h3>01. Customer Information</h3>
+
+                <p class="form-hint">
+                    Enter the customer's basic information.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="customerName">
+                            Customer Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            name="customerName"
+                            placeholder="Enter customer name"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="customerEmail">
+                            Customer Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="customerEmail"
+                            name="customerEmail"
+                            placeholder="customer@example.com"
+                            required>
+                    </div>
+
+                </div>
+
+
+                <hr style="border:0;border-top:1px solid #e8edf5;margin:25px 0;">
+
+
+                <h3>02. Transaction Details</h3>
+
+                <p class="form-hint">
+                    Provide the payment and transaction information.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="transactionId">
+                            Transaction ID *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="transactionId"
+                            name="transactionId"
+                            placeholder="Enter transaction ID"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="amount">
+                            Disputed Amount (USD) *
+                        </label>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            name="amount"
+                            placeholder="0.00"
+                            min="0.01"
+                            step="0.01"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="transactionDate">
+                            Transaction Date *
+                        </label>
+
+                        <input
+                            type="date"
+                            id="transactionDate"
+                            name="transactionDate"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="paymentMethod">
+                            Payment Method
+                        </label>
+
+                        <select id="paymentMethod" name="paymentMethod">
+                            <option value="">Select payment method</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="Debit Card">Debit Card</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <hr style="border:0;border-top:1px solid #e8edf5;margin:25px 0;">
+
+
+                <h3>03. Dispute Information</h3>
+
+                <p class="form-hint">
+                    Describe the customer's complaint.
+                    AI will help identify the dispute reason.
+                </p>
+
+                <div class="form-group">
+
+                    <label for="disputeReason">
+                        Dispute Reason *
+                    </label>
+
+                    <select
+                        id="disputeReason"
+                        name="disputeReason"
+                        required>
+
+                        <option value="">Select dispute reason</option>
+
+                        <option value="Item Not Received">
+                            Item Not Received
+                        </option>
+
+                        <option value="Unauthorized Transaction">
+                            Unauthorized Transaction
+                        </option>
+
+                        <option value="Item Not As Described">
+                            Item Not As Described
+                        </option>
+
+                        <option value="Duplicate Transaction">
+                            Duplicate Transaction
+                        </option>
+
+                        <option value="Refund Not Processed">
+                            Refund Not Processed
+                        </option>
+
+                        <option value="Other">
+                            Other / Unsure
+                        </option>
+
+                    </select>
+
+                    <p class="form-hint">
+                        This is the reported reason, not the AI's final classification.
+                    </p>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="complaintDescription">
+                        Customer Complaint Description *
+                    </label>
+
+                    <textarea
+                        id="complaintDescription"
+                        name="complaintDescription"
+                        placeholder="Enter the complete customer complaint here..."
+                        minlength="10"
+                        required></textarea>
+
+                    <p class="form-hint">
+                        Include relevant details about the customer's issue.
+                    </p>
+
+                </div>
+
+
+                <hr style="border:0;border-top:1px solid #e8edf5;margin:25px 0;">
+
+
+                <h3>04. Supporting Evidence</h3>
+
+                <p class="form-hint">
+                    Upload documents that may help support the dispute review.
+                </p>
+
+                <div class="form-group">
+
+                    <label for="evidenceFiles">
+                        Upload Evidence Documents
+                    </label>
+
+                    <input
+                        type="file"
+                        id="evidenceFiles"
+                        name="evidenceFiles"
+                        accept=".pdf,.png,.jpg,.jpeg"
+                        multiple>
+
+                    <p class="form-hint">
+                        Supported formats: PDF, PNG, JPG and JPEG.
+                    </p>
+
+                </div>
+
+
+                <div id="selectedFiles" class="result-box">
+                    No evidence files selected.
+                </div>
+
+
+                <div class="notice">
+                    Please ensure that uploaded documents are relevant
+                    to the transaction. AI analysis will be performed
+                    after the backend integration is completed.
+                </div>
+
+
+                <!-- SUBMIT BUTTON -->
+                <div style="display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;">
+
+                    <button
+                        type="reset"
+                        class="secondary-button">
+                        Clear Form
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="submitDispute">
+                        ✧ Submit for AI Analysis
+                    </button>
+
+                </div>
+
+                <div id="formMessage" class="notice" hidden></div>
+
+            </form>
+
+
+            <footer class="footer">
+                <span>DisputeShield AI © 2026</span>
+                <span>Intelligent Payment Dispute Management</span>
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="disputes.js"></script>
+
+</body>
+</html>

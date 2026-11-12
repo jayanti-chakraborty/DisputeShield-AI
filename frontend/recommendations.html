@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisputeShield AI | Recommendations</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">🛡</div>
+            <div>
+                <h2>DisputeShield AI</h2>
+                <span>PAYMENT PROTECTION</span>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <span>WORKSPACE</span>
+            <select>
+                <option>PayPal Store</option>
+            </select>
+        </div>
+
+        <nav class="navigation">
+
+            <span class="nav-heading">MAIN MENU</span>
+        
+            <a href="/frontend/index.html" class="nav-link">
+                <span>▦</span> Overview
+            </a>
+        
+            <a href="/frontend/disputes.html" class="nav-link">
+                <span>＋</span> New Dispute
+            </a>
+        
+            <a href="/frontend/transactions.html" class="nav-link">
+                <span>⇄</span> Transactions
+            </a>
+        
+            <a href="/frontend/evidence.html" class="nav-link">
+                <span>▤</span> Evidence Center
+            </a>
+        
+            <a href="/frontend/analysis.html" class="nav-link">
+                <span>✧</span> AI Analysis
+            </a>
+        
+            <a href="/frontend/recommendations.html" class="nav-link active">
+                <span>✧</span> Recommendations
+            </a>
+            
+            <a href="/frontend/analytics.html" class="nav-link">
+                <span>▥</span> Analytics & Reports
+            </a>
+        
+            <a href="/frontend/settings.html" class="nav-link">
+                <span>⚙</span> Settings
+            </a>
+        
+        </nav>
+        
+
+        <div class="sidebar-bottom">
+
+            <div class="security-card">
+                <h4>✧ AI Resolution Assistant</h4>
+                <p>Generate evidence-based dispute resolution suggestions.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">A</div>
+                <div>
+                    <h4>Administrator</h4>
+                    <span>Workspace Admin</span>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="search"
+                    id="recommendationSearch"
+                    placeholder="Search recommendations...">
+            </div>
+
+            <div class="topbar-right">
+                <button class="icon-button">♧</button>
+                <div class="user-avatar">A</div>
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="content-area">
+
+            <div class="page-heading">
+
+                <div>
+                    <div class="breadcrumb">
+                        WORKSPACE / RECOMMENDATIONS
+                    </div>
+
+                    <h1>AI Recommendations</h1>
+
+                    <p>
+                        Get actionable suggestions to strengthen dispute
+                        responses and organize supporting evidence.
+                    </p>
+                </div>
+
+                <span class="badge">AI POWERED</span>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Total Recommendations
+                        <span class="stat-icon purple">◈</span>
+                    </div>
+                    <h2 id="totalRecommendations">0</h2>
+                    <div class="stat-footer">Generated suggestions</div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        High Priority
+                        <span class="stat-icon orange">⚠</span>
+                    </div>
+                    <h2 id="highPriorityRecommendations">0</h2>
+                    <div class="stat-footer">Require attention</div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Evidence Suggestions
+                        <span class="stat-icon blue">▤</span>
+                    </div>
+                    <h2 id="evidenceRecommendations">0</h2>
+                    <div class="stat-footer">Suggested evidence items</div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Completed Actions
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <h2 id="completedRecommendations">0</h2>
+                    <div class="stat-footer">Marked as completed</div>
+                </div>
+
+            </section>
+
+
+            <!-- GENERATE RECOMMENDATIONS -->
+            <section class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>Generate Recommendations</h3>
+                            <p>Get suggestions for a specific dispute.</p>
+                        </div>
+
+                        <span class="stat-icon purple">✧</span>
+                    </div>
+
+
+                    <form id="recommendationForm">
+
+                        <div class="form-group">
+
+                            <label for="recommendationDisputeId">
+                                Dispute / Transaction ID
+                            </label>
+
+                            <input
+                                type="text"
+                                id="recommendationDisputeId"
+                                placeholder="Enter dispute ID"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="recommendationReason">
+                                Dispute Reason
+                            </label>
+
+                            <select id="recommendationReason" required>
+
+                                <option value="">Select dispute reason</option>
+
+                                <option value="Item Not Received">
+                                    Item Not Received
+                                </option>
+
+                                <option value="Unauthorized Transaction">
+                                    Unauthorized Transaction
+                                </option>
+
+                                <option value="Item Not As Described">
+                                    Item Not As Described
+                                </option>
+
+                                <option value="Duplicate Transaction">
+                                    Duplicate Transaction
+                                </option>
+
+                                <option value="Refund Not Processed">
+                                    Refund Not Processed
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="recommendationComplaint">
+                                Complaint Summary
+                            </label>
+
+                            <textarea
+                                id="recommendationComplaint"
+                                rows="5"
+                                placeholder="Enter the complaint summary or relevant AI analysis..."></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="recommendationEvidence">
+                                Available Evidence
+                            </label>
+
+                            <textarea
+                                id="recommendationEvidence"
+                                rows="4"
+                                placeholder="Mention available invoices, delivery proof, receipts or customer communication..."></textarea>
+
+                        </div>
+
+
+                        <div id="recommendationMessage" class="notice" hidden></div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                            id="generateRecommendationsButton">
+
+                            ✧ Generate AI Recommendations
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- AI ASSISTANT -->
+                <div class="dashboard-card ai-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>✧ Resolution Assistant</h3>
+                            <p>How AI recommendations help.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="ai-content">
+
+                        <div class="ai-heading">
+                            <span class="stat-icon purple">◈</span>
+                            <h3>Smart Resolution Guidance</h3>
+                        </div>
+
+                        <p>
+                            The AI assistant will review dispute information
+                            and suggest practical next steps based on
+                            available evidence.
+                        </p>
+
+
+                        <div class="action-item">
+                            <span>01</span>
+                            <div>
+                                <strong>Evidence Suggestions</strong>
+                                <small>Identify useful missing documents.</small>
+                            </div>
+                        </div>
+
+
+                        <div class="action-item">
+                            <span>02</span>
+                            <div>
+                                <strong>Response Drafting</strong>
+                                <small>Prepare a structured dispute response draft.</small>
+                            </div>
+                        </div>
+
+
+                        <div class="action-item">
+                            <span>03</span>
+                            <div>
+                                <strong>Action Prioritization</strong>
+                                <small>Highlight important next steps.</small>
+                            </div>
+                        </div>
+
+
+                        <div class="action-item">
+                            <span>04</span>
+                            <div>
+                                <strong>Policy Guidance</strong>
+                                <small>Consider relevant dispute policy information.</small>
+                            </div>
+                        </div>
+
+
+                        <div class="notice">
+                            Recommendations are decision-support suggestions.
+                            Review them before taking action.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI RECOMMENDATION OUTPUT -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>Generated Recommendations</h3>
+                        <p>AI-generated actions and evidence suggestions.</p>
+                    </div>
+
+                    <span class="badge">AI OUTPUT</span>
+
+                </div>
+
+
+                <div id="recommendationResults" class="result-box">
+
+                    <div class="empty-state">
+
+                        <div style="font-size:38px;">◈</div>
+
+                        <h3>No Recommendations Yet</h3>
+
+                        <p>
+                            Submit a dispute above to receive
+                            AI-generated recommendations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESPONSE DRAFT -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>AI Response Draft</h3>
+                        <p>Review and edit the suggested dispute response.</p>
+                    </div>
+
+                    <span class="stat-icon blue">✎</span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="responseDraft">
+                        Suggested Response
+                    </label>
+
+                    <textarea
+                        id="responseDraft"
+                        rows="9"
+                        placeholder="Your AI-generated dispute response draft will appear here after recommendation generation..."></textarea>
+
+                    <small class="form-hint">
+                        Always verify the information and supporting
+                        evidence before submitting a response.
+                    </small>
+
+                </div>
+
+
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="copyResponseDraft">
+
+                        Copy Draft
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="clearResponseDraft">
+
+                        Clear Draft
+
+                    </button>
+
+                </div>
+
+                <div id="draftMessage" class="notice" hidden></div>
+
+            </section>
+
+
+            <!-- RECOMMENDATION HISTORY -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>Recommendation History</h3>
+                        <p>Previously generated recommendations.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>DISPUTE ID</th>
+                                <th>RECOMMENDATION</th>
+                                <th>PRIORITY</th>
+                                <th>DATE</th>
+                                <th>STATUS</th>
+                                <th>ACTION</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="recommendationHistoryBody">
+
+                            <tr>
+                                <td colspan="6" class="empty-table">
+                                    No recommendation history available.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <span>DisputeShield AI © 2026</span>
+
+                <span>
+                    Intelligent Payment Dispute Management
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/frontend/recommendations.js"></script>
+
+</body>
+</html>

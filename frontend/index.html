@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisputeShield AI | Dashboard</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">🛡</div>
+            <div>
+                <h2>DisputeShield AI</h2>
+                <span>PAYMENT PROTECTION</span>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <span>WORKSPACE</span>
+            <select>
+                <option>PayPal Store</option>
+            </select>
+        </div>
+
+        <nav class="navigation">
+
+            <span class="nav-heading">MAIN MENU</span>
+
+            <a href="/frontend/index.html" class="nav-link active">
+                <span>▦</span> Overview
+            </a>
+
+            <a href="/frontend/disputes.html" class="nav-link">
+                <span>＋</span> New Dispute
+            </a>
+
+            <a href="/frontend/transactions.html" class="nav-link">
+                <span>⇄</span> Transactions
+            </a>
+
+            <a href="/frontend/evidence.html" class="nav-link">
+                <span>▤</span> Evidence Center
+            </a>
+
+            <a href="/frontend/analysis.html" class="nav-link">
+                <span>✧</span> AI Analysis
+            </a>
+
+            <a href="/frontend/recommendations.html" class="nav-link">
+                <span>◈</span> Recommendations
+            </a>
+
+            <a href="/frontend/analytics.html" class="nav-link">
+                <span>▥</span> Analytics & Reports
+            </a>
+
+            <a href="/frontend/settings.html" class="nav-link">
+                <span>⚙</span> Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="security-card">
+                <h4>✧ AI Protection Workspace</h4>
+                <p>Intelligent dispute monitoring and evidence management.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">A</div>
+                <div>
+                    <h4>Administrator</h4>
+                    <span>Workspace Admin</span>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="search" placeholder="Search disputes, transactions...">
+            </div>
+
+            <div class="topbar-right">
+                <button class="icon-button">♧</button>
+                <div class="user-avatar">A</div>
+            </div>
+
+        </header>
+
+
+        <section class="content-area">
+
+            <div class="page-heading">
+
+                <div>
+                    <div class="breadcrumb">WORKSPACE / OVERVIEW</div>
+                    <h1>Dashboard Overview</h1>
+                    <p>Monitor your payment disputes and AI protection activity.</p>
+                </div>
+
+                <a href="/frontend/disputes.html" class="primary-button">
+                    + Create New Dispute
+                </a>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Open Disputes
+                        <span class="stat-icon purple">▦</span>
+                    </div>
+                    <h2 id="openDisputes">0</h2>
+                    <div class="stat-footer">Total submitted cases</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Under Analysis
+                        <span class="stat-icon blue">✧</span>
+                    </div>
+                    <h2 id="activeDisputes">0</h2>
+                    <div class="stat-footer">Awaiting AI review</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Resolved Disputes
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <h2 id="resolvedDisputes">0</h2>
+                    <div class="stat-footer">Completed cases</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Disputed Amount
+                        <span class="stat-icon orange">$</span>
+                    </div>
+                    <h2 id="totalAmount">$0.00</h2>
+                    <div class="stat-footer">Total disputed value</div>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>Dispute Overview</h3>
+                            <p>Monitor dispute activity</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-placeholder">
+                        <div class="chart-empty">
+                            <span>▥</span>
+                            <p>Dispute activity will appear here</p>
+                            <small>Submit disputes to populate your dashboard.</small>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>Dispute Status</h3>
+                            <p>Current case distribution</p>
+                        </div>
+                    </div>
+
+                    <div id="statusBreakdown">
+                        <div class="empty-state">
+                            No dispute data available yet.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>Recent Disputes</h3>
+                            <p>Recently submitted cases</p>
+                        </div>
+
+                        <a href="/frontend/transactions.html">View All →</a>
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>TRANSACTION ID</th>
+                                    <th>CUSTOMER</th>
+                                    <th>AMOUNT</th>
+                                    <th>REASON</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="recentTransactions">
+
+                                <tr>
+                                    <td colspan="5" class="empty-table">
+                                        No disputes submitted yet.
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card ai-card">
+
+                    <div class="ai-heading">
+                        <span>✧</span>
+                        <div>
+                            <h3>DisputeShield AI Assistant</h3>
+                            <p>AI-powered dispute intelligence</p>
+                        </div>
+                    </div>
+
+                    <div class="ai-content">
+
+                        <h4>Your AI workspace is ready</h4>
+
+                        <p>
+                            Analyze customer complaints, identify dispute
+                            reasons, review supporting evidence and generate
+                            intelligent recommendations.
+                        </p>
+
+                        <a href="/frontend/analysis.html" class="primary-button">
+                            Open AI Analysis →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <footer class="footer">
+                <span>DisputeShield AI © 2026</span>
+                <span>Intelligent Payment Dispute Management</span>
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/frontend/script.js"></script>
+
+</body>
+</html>

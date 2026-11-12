@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisputeShield AI | Analytics & Reports</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">🛡</div>
+            <div>
+                <h2>DisputeShield AI</h2>
+                <span>PAYMENT PROTECTION</span>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <span>WORKSPACE</span>
+            <select>
+                <option>PayPal Store</option>
+            </select>
+        </div>
+
+        <nav class="navigation">
+
+            <span class="nav-heading">MAIN MENU</span>
+
+            <a href="index.html" class="nav-link">
+                <span>▦</span> Overview
+            </a>
+
+            <a href="disputes.html" class="nav-link">
+                <span>＋</span> New Dispute
+            </a>
+
+            <a href="transactions.html" class="nav-link">
+                <span>⇄</span> Transactions
+            </a>
+
+            <a href="evidence.html" class="nav-link">
+                <span>▤</span> Evidence Center
+            </a>
+
+            <a href="analysis.html" class="nav-link">
+                <span>✧</span> AI Analysis
+            </a>
+
+            <a href="recommendations.html" class="nav-link">
+                <span>◈</span> Recommendations
+            </a>
+
+            <a href="analytics.html" class="nav-link active">
+                <span>▥</span> Analytics & Reports
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                <span>⚙</span> Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="security-card">
+                <h4>✧ Business Intelligence</h4>
+                <p>Monitor dispute trends and review performance insights.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">A</div>
+                <div>
+                    <h4>Administrator</h4>
+                    <span>Workspace Admin</span>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="search"
+                    id="analyticsSearch"
+                    placeholder="Search reports...">
+            </div>
+
+            <div class="topbar-right">
+                <button class="icon-button">♧</button>
+                <div class="user-avatar">A</div>
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="content-area">
+
+            <div class="page-heading">
+
+                <div>
+                    <div class="breadcrumb">
+                        WORKSPACE / ANALYTICS
+                    </div>
+
+                    <h1>Analytics & Reports</h1>
+
+                    <p>
+                        Track dispute performance, analyze trends
+                        and monitor resolution statistics.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="exportAnalytics">
+
+                    ↓ Export Report
+
+                </button>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Total Disputes
+                        <span class="stat-icon purple">▥</span>
+                    </div>
+                    <h2 id="analyticsTotalDisputes">0</h2>
+                    <div class="stat-footer">Total recorded disputes</div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Resolved Disputes
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <h2 id="analyticsResolved">0</h2>
+                    <div class="stat-footer">Successfully resolved cases</div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Pending Disputes
+                        <span class="stat-icon orange">◷</span>
+                    </div>
+                    <h2 id="analyticsPending">0</h2>
+                    <div class="stat-footer">Cases awaiting review</div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        Total Disputed Amount
+                        <span class="stat-icon blue">₹</span>
+                    </div>
+                    <h2 id="analyticsTotalAmount">₹0</h2>
+                    <div class="stat-footer">Recorded disputed value</div>
+                </div>
+
+            </section>
+
+
+            <!-- CHART SECTION -->
+            <section class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h3>Dispute Overview</h3>
+                            <p>Distribution of recorded dispute statuses.</p>
+                        </div>
+
+                    </div>
+
+                    <div id="disputeOverviewChart" class="chart-placeholder">
+
+                        <div class="chart-empty">
+                            <div style="font-size:38px;">▥</div>
+                            <h3>No Data Available</h3>
+                            <p>
+                                Dispute statistics will appear here
+                                when records are available.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h3>Dispute Categories</h3>
+                            <p>Breakdown by dispute reason.</p>
+                        </div>
+
+                    </div>
+
+                    <div id="disputeCategoryChart" class="chart-placeholder">
+
+                        <div class="chart-empty">
+                            <div style="font-size:38px;">◈</div>
+                            <h3>No Category Data</h3>
+                            <p>
+                                Category statistics will appear
+                                after disputes are submitted.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PERFORMANCE SECTION -->
+            <section class="dashboard-grid" style="margin-top:20px;">
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h3>Resolution Performance</h3>
+                            <p>Monitor the status of dispute resolution.</p>
+                        </div>
+
+                    </div>
+
+                    <div id="resolutionPerformance">
+
+                        <div class="empty-state">
+                            <h3>No Performance Data</h3>
+                            <p>
+                                Performance metrics will be calculated
+                                from available dispute records.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h3>AI Activity Overview</h3>
+                            <p>Monitor AI processing activity.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="action-item">
+                        <span>✧</span>
+                        <div>
+                            <strong>Total AI Analyses</strong>
+                            <small id="analyticsAIAnalyses">0 analyses</small>
+                        </div>
+                    </div>
+
+                    <div class="action-item">
+                        <span>▤</span>
+                        <div>
+                            <strong>Documents Reviewed</strong>
+                            <small id="analyticsDocuments">0 documents</small>
+                        </div>
+                    </div>
+
+                    <div class="action-item">
+                        <span>◈</span>
+                        <div>
+                            <strong>Recommendations Generated</strong>
+                            <small id="analyticsRecommendations">0 recommendations</small>
+                        </div>
+                    </div>
+
+                    <div class="notice">
+                        AI activity statistics will update
+                        after backend integration.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- REPORT HISTORY -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>Reports History</h3>
+                        <p>Previously generated reports.</p>
+                    </div>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>REPORT NAME</th>
+                                <th>REPORT TYPE</th>
+                                <th>GENERATED DATE</th>
+                                <th>STATUS</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="reportsHistoryBody">
+
+                            <tr>
+                                <td colspan="5" class="empty-table">
+                                    No reports generated yet.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <span>DisputeShield AI © 2026</span>
+
+                <span>
+                    Intelligent Payment Dispute Management
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="analytics.js"></script>
+
+</body>
+</html>

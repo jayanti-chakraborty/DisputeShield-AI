@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisputeShield AI | Settings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">🛡</div>
+            <div>
+                <h2>DisputeShield AI</h2>
+                <span>PAYMENT PROTECTION</span>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <span>WORKSPACE</span>
+            <select>
+                <option>PayPal Store</option>
+            </select>
+        </div>
+
+        <nav class="navigation">
+
+            <span class="nav-heading">MAIN MENU</span>
+
+            <a href="index.html" class="nav-link">
+                <span>▦</span> Overview
+            </a>
+
+            <a href="disputes.html" class="nav-link">
+                <span>＋</span> New Dispute
+            </a>
+
+            <a href="transactions.html" class="nav-link">
+                <span>⇄</span> Transactions
+            </a>
+
+            <a href="evidence.html" class="nav-link">
+                <span>▤</span> Evidence Center
+            </a>
+
+            <a href="analysis.html" class="nav-link">
+                <span>✧</span> AI Analysis
+            </a>
+
+            <a href="recommendations.html" class="nav-link">
+                <span>◈</span> Recommendations
+            </a>
+
+            <a href="analytics.html" class="nav-link">
+                <span>▥</span> Analytics & Reports
+            </a>
+
+            <a href="settings.html" class="nav-link active">
+                <span>⚙</span> Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="security-card">
+                <h4>✧ Workspace Configuration</h4>
+                <p>Manage your application preferences and configuration.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">A</div>
+                <div>
+                    <h4>Administrator</h4>
+                    <span>Workspace Admin</span>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="search"
+                    id="settingsSearch"
+                    placeholder="Search settings...">
+            </div>
+
+            <div class="topbar-right">
+                <button class="icon-button">♧</button>
+                <div class="user-avatar">A</div>
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="content-area">
+
+            <div class="page-heading">
+
+                <div>
+                    <div class="breadcrumb">
+                        WORKSPACE / SETTINGS
+                    </div>
+
+                    <h1>Settings</h1>
+
+                    <p>
+                        Manage your profile, application preferences
+                        and AI configuration.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- SETTINGS NAVIGATION -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+                    <div>
+                        <h3>Settings Overview</h3>
+                        <p>Configure your DisputeShield AI workspace.</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="action-item">
+                        <span>♙</span>
+                        <div>
+                            <strong>Profile Settings</strong>
+                            <small>Manage administrator information.</small>
+                        </div>
+                    </div>
+
+                    <div class="action-item">
+                        <span>✧</span>
+                        <div>
+                            <strong>AI Configuration</strong>
+                            <small>Manage AI service preferences.</small>
+                        </div>
+                    </div>
+
+                    <div class="action-item">
+                        <span>♧</span>
+                        <div>
+                            <strong>Notifications</strong>
+                            <small>Manage application notifications.</small>
+                        </div>
+                    </div>
+
+                    <div class="action-item">
+                        <span>🔒</span>
+                        <div>
+                            <strong>Security</strong>
+                            <small>Review application security information.</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROFILE SETTINGS -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>Profile Settings</h3>
+                        <p>Administrator account information.</p>
+                    </div>
+
+                </div>
+
+
+                <form id="profileSettingsForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="adminName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="adminName"
+                                value="Administrator"
+                                placeholder="Enter your name">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="adminEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="adminEmail"
+                                placeholder="Enter your email">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="workspaceName">
+                                Workspace Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="workspaceName"
+                                value="PayPal Store">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="accountRole">
+                                Account Role
+                            </label>
+
+                            <input
+                                type="text"
+                                id="accountRole"
+                                value="Administrator"
+                                readonly>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+
+                        Save Profile
+
+                    </button>
+
+                </form>
+
+                <div id="profileMessage" class="notice" hidden></div>
+
+            </section>
+
+
+            <!-- AI CONFIGURATION -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>AI Configuration</h3>
+                        <p>Configure the AI services used by the application.</p>
+                    </div>
+
+                    <span class="stat-icon purple">✧</span>
+
+                </div>
+
+
+                <form id="aiSettingsForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="aiProvider">
+                                AI Provider
+                            </label>
+
+                            <select id="aiProvider">
+
+                                <option value="gemini">
+                                    Google Gemini
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="aiModel">
+                                AI Model
+                            </label>
+
+                            <select id="aiModel">
+
+                                <option value="gemini-2.5-flash">
+                                    Gemini 2.5 Flash
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="aiLanguage">
+                                Analysis Language
+                            </label>
+
+                            <select id="aiLanguage">
+
+                                <option value="English">English</option>
+                                <option value="Bengali">Bengali</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="aiResponseStyle">
+                                Response Style
+                            </label>
+
+                            <select id="aiResponseStyle">
+
+                                <option value="professional">
+                                    Professional
+                                </option>
+
+                                <option value="concise">
+                                    Concise
+                                </option>
+
+                                <option value="detailed">
+                                    Detailed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notice">
+                        API keys must remain securely stored in the backend
+                        environment file. Never enter or expose secret API
+                        keys in frontend JavaScript.
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+
+                        Save AI Preferences
+
+                    </button>
+
+                </form>
+
+                <div id="aiSettingsMessage" class="notice" hidden></div>
+
+            </section>
+
+
+            <!-- NOTIFICATION SETTINGS -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>Notification Preferences</h3>
+                        <p>Choose which application notifications to enable.</p>
+                    </div>
+
+                </div>
+
+
+                <form id="notificationSettingsForm">
+
+                    <div class="action-item">
+
+                        <div>
+                            <strong>Dispute Updates</strong>
+                            <small>Receive updates when dispute records change.</small>
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="disputeNotifications"
+                            checked>
+
+                    </div>
+
+
+                    <div class="action-item">
+
+                        <div>
+                            <strong>AI Analysis Updates</strong>
+                            <small>Receive updates when AI analysis completes.</small>
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="aiNotifications"
+                            checked>
+
+                    </div>
+
+
+                    <div class="action-item">
+
+                        <div>
+                            <strong>Evidence Upload Updates</strong>
+                            <small>Receive notifications about document uploads.</small>
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="evidenceNotifications"
+                            checked>
+
+                    </div>
+
+
+                    <div class="action-item">
+
+                        <div>
+                            <strong>Recommendation Updates</strong>
+                            <small>Receive updates when new recommendations are generated.</small>
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="recommendationNotifications"
+                            checked>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+
+                        Save Notification Preferences
+
+                    </button>
+
+                </form>
+
+                <div id="notificationMessage" class="notice" hidden></div>
+
+            </section>
+
+
+            <!-- SECURITY SETTINGS -->
+            <section class="dashboard-card" style="margin-top:20px;">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>Security & Privacy</h3>
+                        <p>Important information about application security.</p>
+                    </div>
+
+                    <span class="stat-icon green">🔒</span>
+
+                </div>
+
+
+                <div class="action-item">
+
+                    <span>✓</span>
+
+                    <div>
+                        <strong>Backend API Protection</strong>
+                        <small>
+                            Sensitive API credentials should be stored
+                            on the backend only.
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="action-item">
+
+                    <span>✓</span>
+
+                    <div>
+                        <strong>Environment Configuration</strong>
+                        <small>
+                            Keep secret configuration values inside
+                            the backend environment file.
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="action-item">
+
+                    <span>✓</span>
+
+                    <div>
+                        <strong>Data Privacy</strong>
+                        <small>
+                            Avoid uploading unnecessary personal
+                            or sensitive customer information.
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="notice">
+                    DisputeShield AI is currently being developed.
+                    Production authentication, access control and
+                    data-protection features must be configured
+                    before real customer data is used.
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <span>DisputeShield AI © 2026</span>
+
+                <span>
+                    Intelligent Payment Dispute Management
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="settings.js"></script>
+
+</body>
+</html>
